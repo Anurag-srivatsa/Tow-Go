@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import './App.css';
 import LoginForm from './LoginForm';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -10,11 +10,24 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/login" component={LoginForm} />
-          <Route path="/dashboard" component={Dashboard} />
-          {/* Add other routes as necessary */}
-        </Switch>
+          <Route path="/dashboard" component={Dashboard} />*/
+          //{/* Add other routes as necessary */}
+        /*</Switch>
       </div>
     </Router>
+  );
+}
+
+export default App;*/
+import React from 'react';
+import './App.css';
+import RegistrationForm from './RegistrationForm.js';
+
+function App() {
+  return (
+    <div className="App">
+      <RegistrationForm />
+    </div>
   );
 }
 
