@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useHistory
 
 // Registration Form Component
 const RegistrationForm = () => {
@@ -11,6 +12,7 @@ const RegistrationForm = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
+  const history = useNavigate(); // Initialize useHistory
 
   // Handle input change
   const handleChange = (e) => {
@@ -70,6 +72,9 @@ const RegistrationForm = () => {
       // Simulate form submission
       setSuccessMessage("Registration successful!");
       console.log("Form data submitted:", formData);
+
+      // Redirect to Main Page upon successful registration
+      history.push("/main");
 
       // Clear form after submission
       setFormData({

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Login Form Component
 const LoginForm = () => {
@@ -10,7 +10,7 @@ const LoginForm = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-  const history = useHistory();
+  const history = useNavigate();
 
   // Handle input change
   const handleChange = (e) => {
@@ -52,7 +52,7 @@ const LoginForm = () => {
       const isValidUser = await verifyCredentials(formData.email, formData.password);
       if (isValidUser) {
         setErrorMessage("");
-        history.push("/dashboard"); // Redirect to dashboard upon successful login
+        history.push("/main"); // Redirect to the Main Page upon successful login
       } else {
         setErrorMessage("Invalid email or password.");
       }
