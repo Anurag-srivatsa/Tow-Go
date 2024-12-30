@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const navigateTo = (path) => {
-    history.push(path);
+    navigate.push(path);
   };
 
   return (
