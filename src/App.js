@@ -32,6 +32,7 @@ const App = () => {
         <Route path="/schedule-uber" element={<h2>Schedule Uber Page</h2>} />
         <Route path="/service-history" element={<h2>Service History Page</h2>} />
         <Route path="/real-time-tracking" element={<h2>Real-Time Tracking Page</h2>} />
+        <Route path="*" element={<h2>404: Page Not Found</h2>} />
       </Routes>
     </Router>
   );
