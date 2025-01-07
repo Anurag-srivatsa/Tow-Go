@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 // Login Form Component
 const LoginForm = () => {
@@ -48,12 +49,12 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Mock API call to verify credentials
-      const isValidUser = await verifyCredentials(formData.email, formData.password);
-      if (isValidUser) {
-        setErrorMessage("");
-        history.push("/main"); // Redirect to the Main Page upon successful login
-      } else {
+      try {
+        const response = await axios.post('mongodb+srv://apsriv:TowTruck7@cluster0.llkyf.mongodb.net/towgo?retryWrites=true&w=majority&appName=Cluster0', formData);
+        const { token } = response.data;
+        localStorage.setItem('token', token); // Save token in local storage
+        history.push("/main");
+      } catch (error) {
         setErrorMessage("Invalid email or password.");
       }
     }
