@@ -12,7 +12,7 @@ const RegistrationForm = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
-  const history = useNavigate(); // Initialize useHistory
+  const navigate = useNavigate(); // Initialize useHistory
 
   // Handle input change
   const handleChange = (e) => {
@@ -74,7 +74,7 @@ const RegistrationForm = () => {
       console.log("Form data submitted:", formData);
 
       // Redirect to Main Page upon successful registration
-      history.push("/main");
+      navigate("/main");
 
       // Clear form after submission
       setFormData({
